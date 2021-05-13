@@ -21,7 +21,7 @@ public class Planning implements Serializable {
 
     private  String name;
     @XmlElement(name="name")
-    public String getNaam() {
+    public String getName() {
         return name;
     }
 

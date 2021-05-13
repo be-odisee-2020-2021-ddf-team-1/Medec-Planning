@@ -27,4 +27,15 @@ public class PlanningRestController {
     }
 
 
+
+    @GetMapping("/{id}")
+    public Planning getPlanningById(@PathVariable("id") Long id) {
+
+        if (_planningRepository.findById(id).isPresent()) {
+            return _planningRepository.findById(id).get();
+        } else {
+            return  null;
+        }
+    }
+
 }

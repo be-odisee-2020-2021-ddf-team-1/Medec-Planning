@@ -2,7 +2,6 @@ package com.example.demo.dao;
 
 import com.example.demo.domain.Planning;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;

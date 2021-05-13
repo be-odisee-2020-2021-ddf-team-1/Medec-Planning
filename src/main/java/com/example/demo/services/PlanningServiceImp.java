@@ -21,6 +21,7 @@ public class PlanningServiceImp implements PlanningService {
         _planningRepository.save(newPlanning);
     }
 
+
     public void UpdatePlanning(Planning planning){_planningRepository.save(planning);}
     @Override
     public Optional<Planning> getPlanningById(long planningId) {
@@ -41,5 +42,11 @@ public class PlanningServiceImp implements PlanningService {
         return  _planningRepository.findById(planningId);
      }
 
+
+
+
+    public Optional<Planning> findPlanningById(long planningId) {
+        return _planningRepository.findById(planningId);
+    }
 
 }

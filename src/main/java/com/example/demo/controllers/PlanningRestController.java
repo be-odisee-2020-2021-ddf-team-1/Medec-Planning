@@ -35,6 +35,19 @@ public class PlanningRestController {
     }
 
 
+    @GetMapping("/{id}")
+    public Planning getPlanningBy(@PathVariable("id") Long id) {
+        System.out.println("id = " + id);
+        if (_planningService.findPlanningById(id).isPresent()) {
+            System.out.println("return: " + _planningService.findPlanningById(id).get());
+
+            return _planningService.findPlanningById(id).get();
+        } else {
+            System.out.println("Niets gevonden....");
+
+            return  null;
+        }
+    }
 
     @GetMapping("/{id}")
     public Planning getPlanningById(@PathVariable("id") Long id) {

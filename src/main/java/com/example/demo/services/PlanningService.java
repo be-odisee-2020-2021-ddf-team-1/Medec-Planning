@@ -11,9 +11,13 @@ public interface PlanningService {
         void CreatePlanning(Planning planning);
         void UpdatePlanning(Planning planning);
 
+
    Optional<Planning> getPlanningById(long planningId);
 
-    Planning getPlanningByNaam(String planningNaam);
+    Optional<Planning> findPlanningById(long planningId);
+
+
+  /*  Planning getPlanningByNaam(String planningNaam);
 
     void deletePlanning(long planningId);
 

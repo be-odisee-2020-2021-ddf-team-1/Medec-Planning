@@ -22,10 +22,11 @@ public class PlanningRestController {
     private PlanningService _planningService;
 
     @PostMapping(path={"/createPlanning"},consumes = "application/json")
-    public void createPlannning(String name) {
-        Planning planning=new Planning();
-        planning.setName(name);
-        _planningService.CreatePlanning(planning);
+    public Planning createPlannning(@RequestBody Planning planning) {
+        Planning newplanning =new Planning();
+        System.out.println("return: " + planning.getPlanningId() + planning.getName());
+        newplanning.setName(planning.getName());
+       return  _planningService.CreatePlanning(newplanning);
     }
     @PutMapping(path={"/updatePlanning/{id}"},consumes = "application/json")
     public void update(@PathVariable("id") Integer id, @RequestBody Planning planning)
@@ -49,14 +50,14 @@ public class PlanningRestController {
         }
     }
 
-    @GetMapping("/{id}")
-    public Planning getPlanningById(@PathVariable("id") Long id) {
-
-        if (_planningRepository.findById(id).isPresent()) {
-            return _planningRepository.findById(id).get();
-        } else {
-            return  null;
-        }
-    }
+//    @GetMapping("/{id}")
+//    public Planning getPlanningById(@PathVariable("id") Long id) {
+//
+//        if (_planningRepository.findById(id).isPresent()) {
+//            return _planningRepository.findById(id).get();
+//        } else {
+//            return  null;
+//        }
+//    }
 
 }

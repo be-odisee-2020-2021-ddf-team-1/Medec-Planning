@@ -17,8 +17,9 @@ public class PlanningServiceImp implements PlanningService {
     }
 
     //@Transactional(propagation= Propagation.REQUIRED,readOnly=false)
-    public void CreatePlanning(Planning newPlanning){
-        _planningRepository.save(newPlanning);
+    public Planning CreatePlanning(Planning newPlanning){
+       return _planningRepository.save(newPlanning);
+
     }
 
 
@@ -28,22 +29,19 @@ public class PlanningServiceImp implements PlanningService {
         return Optional.empty();
     }
 
-    @Override
-    public Planning getPlanningByNaam(String planningNaam) {
-        return null;
-    }
-
-    @Override
-    public void deletePlanning(long planningId) {
-
-    }
+//    @Override
+//    public Planning getPlanningByNaam(String planningNaam) {
+//        return null;
+//    }
+//
+//    @Override
+//    public void deletePlanning(long planningId) {
+//
+//    }
 
     public Optional<Planning> getPlanningById(Long planningId){
         return  _planningRepository.findById(planningId);
      }
-
-
-
 
     public Optional<Planning> findPlanningById(long planningId) {
         return _planningRepository.findById(planningId);

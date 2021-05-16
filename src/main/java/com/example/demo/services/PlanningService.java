@@ -8,14 +8,14 @@ import java.util.Optional;
 public interface PlanningService {
 
 
-        void CreatePlanning(Planning planning);
+    Planning CreatePlanning(Planning planning);
         void UpdatePlanning(Planning planning);
 
 
    Optional<Planning> getPlanningById(long planningId);
 
     Optional<Planning> findPlanningById(long planningId);
-
+}
 
   /*  Planning getPlanningByNaam(String planningNaam);
 
@@ -23,7 +23,7 @@ public interface PlanningService {
 
     //List<Planning> getPlannings();
 
-    }
+    }*/
 
 
 
